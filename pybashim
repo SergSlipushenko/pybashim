@@ -1,0 +1,2 @@
+#!/usr/bin/env python
+import httplib2,re,random; print random.choice(re.findall(r"(\<\!\[CDATA\[.*\]\])",httplib2.Http().request("http://bash.im/rss")[1])).decode("cp1251").encode("utf8").split("<![CDATA[")[1].split("]]")[0].replace("&quot;", "\"").replace("<br>", "\n").replace("&gt;",">").replace("&lt;","<")
